@@ -10,13 +10,14 @@
 export default function handler(req, res) {
     const tokenId = req.query.tokenId;
     
-    const name = "CannBen #${tokenId}";
+    
     const description = "CannBen ist ein NFT Collection für CannBen Kunden!";
-    const image = "https://raw.githubusercontent.com/LearnWeb3DAO/NFT-Collection/main/my-app/public/cryptodevs/${Number(tokenId) - 1}.svg";
+    const image_url =
+    "https://raw.githubusercontent.com/LearnWeb3DAO/NFT-Collection/main/my-app/public/cryptodevs/";
 
     return res.json({
-    name: name,
+        name: "CannBen #" + tokenId,
     description: description,
-    image: image,    
+    image: image_url + tokenId + ".svg",
     });
 }
